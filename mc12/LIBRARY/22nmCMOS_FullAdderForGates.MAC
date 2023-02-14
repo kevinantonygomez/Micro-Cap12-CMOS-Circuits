@@ -1,0 +1,1212 @@
+[Main]
+FileType=CIR
+Version=12.00
+Program=Micro-Cap
+Component Version=10.00
+Shape Version=11.00
+Screen=1536,864
+MCAPVersion=12.2.0.5
+Key ID=Demo
+NLCnt=80
+TXCnt=30
+
+[shapedef]
+Name=22nmCMOS_2x1Mux
+Line=56,32,24,8
+Line=24,24,0,24
+Line=24,8,24,56
+Line=40,20,40,-8
+Line=24,56,0,56
+Line=56,48,56,32
+Line=56,48,24,72
+Line=24,72,24,56
+Line=56,40,80,40
+Line=32,66,32,88
+Line=48,54,48,72
+
+[shapedef]
+Name=22nmCMOS_3ORGate
+Root="Or.root",16,16,0
+Line=40,12,40,-8
+Line=40,36,40,56
+Line=64,24,80,24
+Line=16,16,0,16
+Line=16,32,0,32
+Line=28,24,0,24
+
+[shapedef]
+Name=22nmCMOS_4x1Mux
+Line=64,32,32,8
+Line=32,16,8,16
+Line=32,64,8,64
+Line=32,8,32,56
+Line=40,14,40,-16
+Line=56,80,56,54
+Line=32,32,8,32
+Line=32,48,8,48
+Line=56,26,56,0
+Line=64,48,64,32
+Line=64,48,32,72
+Line=32,72,32,56
+Line=64,40,88,40
+Line=40,66,40,96
+
+[shapedef]
+Name=22nmCMOS_ANDGate
+Root="And.root",15,8,0
+Line=63,16,80,16
+Line=16,24,0,24
+Line=16,8,0,8
+Line=40,4,40,-8
+Line=40,28,40,48
+Line=40,-8,40,-16
+
+[shapedef]
+Name=22nmCMOS_XORGate
+Root="Xor.root",15,0,0
+Line=32,12,32,0
+Line=32,36,32,48
+Line=11,16,19,16
+Line=11,32,19,32
+Line=59,24,67,24
+Line=64,24,72,24
+Line=11,16,0,16
+Line=11,32,0,32
+Line=32,0,32,-8
+Line=32,48,32,56
+
+[shapedef]
+Name=And.root
+Line=0,0,9,0
+Line=0,16,9,16
+Line=9,20,9,-4
+Line=27,20,9,20
+Line=9,-4,27,-4
+Line=40,8,48,8
+Arc=12,-4,40,20 , 28,32,28,-16
+
+[shapedef]
+Name=Or.root
+Line=42,8,48,8
+Line=0,0,10,0
+Line=0,16,10,16
+Line=24,-4,6,-4
+Line=6,20,24,20
+Arc=5,-4,43,34 , 42,8,24,-4
+Arc=0,-4,12,20 , 6,20,6,-4
+Arc=5,-18,43,20 , 24,20,42,8
+
+[shapedef]
+Name=Xor.root
+Root="Or.root",0,16,0
+Arc=-4,12,8,36 , 2,36,2,12
+
+[compdef]
+Name=22nmCMOS_ANDGate
+Definition=Macro
+Shape=22nmCMOS_ANDGate
+Mask=4224
+Used=12
+Label Offset=24,24,-24,24
+PinCnt=5
+Pin="VDD",a,5,-2
+Pin="VSS",a,5,6
+Pin="inA",a,0,1,-26,7
+Pin="inB",a,0,3,-26,7
+Pin="out",a,10,2,8,7
+
+[compdef]
+Name=22nmCMOS_XORGate
+Definition=Macro
+Shape=22nmCMOS_XORGate
+Mask=4224
+Used=11
+Label Offset=24,24,-24,24
+PinCnt=5
+Pin="inA",a,0,2,-17,7
+Pin="inB",a,0,4,-17,8
+Pin="VDD",a,4,-1,-8,0
+Pin="VSS",a,4,7,-8,18
+Pin="out",a,9,3,6,6
+
+[compdef]
+Name=22nmCMOS_3ORGate
+Definition=Macro
+Shape=22nmCMOS_3ORGate
+Mask=4224
+Used=6
+Label Offset=24,24,-24,24
+PinCnt=6
+Pin="inA",a,0,2,-16,5
+Pin="inB",a,0,3,-16,6
+Pin="inC",a,0,4,-16,8
+Pin="VDD",a,5,-1,-9,0
+Pin="VSS",a,5,7,-7,17
+Pin="out",a,10,3,7,6
+
+[compdef]
+Name=22nmCMOS_4x1Mux
+Definition=Macro
+Shape=22nmCMOS_4x1Mux
+Mask=4224
+Used=5
+Label Offset=24,24,-24,24
+PinCnt=9
+Pin="inA",a,1,2,-19,6
+Pin="inB",a,1,4,-19,6
+Pin="inC",a,1,6,-19,6
+Pin="inD",a,1,8,-19,8
+Pin="selA",a,5,-2,-7,-1
+Pin="selB",a,7,0,-7,-2
+Pin="VSS",a,5,12,-9,16
+Pin="VDD",a,7,10,-8,17
+Pin="out",a,11,5,7,6
+
+[compdef]
+Name=22nmCMOS_2x1Mux
+Definition=Macro
+Shape=22nmCMOS_2x1Mux
+Mask=4224
+Used=4
+Label Offset=24,24,-24,24
+PinCnt=6
+Pin="inA",a,0,3,-19,7
+Pin="inB",a,0,7,-17,7
+Pin="VSS",a,4,11,-9,19
+Pin="VDD",a,6,9,-9,19
+Pin="out",a,10,5,8,7
+Pin="sel",a,5,-1,-5,0
+
+[Circuit]
+Window Placement=2,3, -1,-1, -8,-31, 182,182,1242,549
+Default Object=Color=#000080
+Default Object Font=Height=-15,FStyle=0,Color=#000080,Name=Arial
+Default Object Apply Border To Text=No
+Default Object Apply Fill To Text=No
+Default Object GridSnap=No
+NodeVoltageFormat=3
+CurrentFormat=3
+PowerFormat=3
+PathDelayFormat=3
+WarningFormat=3
+GridTextFormulaFormat=3
+SpiceType=AMBIGUOUS
+Title_Block_Border=None
+Title_Block=False
+Show Nodes=False
+Show Voltages=False
+Show Current=False
+Show Power=False
+Show Condition=False
+Show Pin Connections=False
+Show Connection Warnings=False
+Show Cross=False
+Show Attribute Text=True
+Show Grid Text=True
+
+[Wire]
+Pxs=256,200,312,200
+
+[Wire]
+Pxs=256,112,312,112
+
+[Wire]
+Pxs=312,160,312,200
+
+[Wire]
+Pxs=312,160,336,160
+
+[Wire]
+Pxs=312,144,336,144
+
+[Wire]
+Pxs=312,112,312,144
+
+[Wire]
+Pxs=400,152,416,152
+
+[Wire]
+Pxs=472,136,504,136
+
+[Wire]
+Pxs=472,64,472,136
+
+[Wire]
+Pxs=568,144,584,144
+
+[Wire]
+Pxs=488,152,488,256
+
+[Wire]
+Pxs=488,256,520,256
+
+[Wire]
+Pxs=488,152,512,152
+
+[Wire]
+Pxs=504,136,504,240
+
+[Wire]
+Pxs=504,240,520,240
+
+[Wire]
+Pxs=504,136,512,136
+
+[Wire]
+Pxs=544,88,544,112
+
+[Wire]
+Pxs=560,200,560,208
+
+[Wire]
+Pxs=536,280,560,280
+
+[Wire]
+Pxs=584,344,640,344
+
+[Wire]
+Pxs=544,176,544,184
+
+[Wire]
+Pxs=544,184,552,184
+
+[Wire]
+Pxs=584,296,584,344
+
+[Wire]
+Pxs=656,296,680,296
+
+[Wire]
+Pxs=496,304,600,304
+
+[Wire]
+Pxs=376,176,376,184
+
+[Wire]
+Pxs=376,96,376,120
+
+[Wire]
+Pxs=200,440,256,440
+
+[Wire]
+Pxs=200,456,256,456
+
+[Wire]
+Pxs=200,472,256,472
+
+[Wire]
+Pxs=200,488,256,488
+
+[Wire]
+Pxs=288,384,288,408
+
+[Wire]
+Pxs=288,384,304,384
+
+[Wire]
+Pxs=304,408,304,424
+
+[Wire]
+Pxs=304,408,328,408
+
+[Wire]
+Pxs=288,520,288,544
+
+[Wire]
+Pxs=336,464,440,464
+
+[Wire]
+Pxs=424,152,424,496
+
+[Wire]
+Pxs=424,152,488,152
+
+[Wire]
+Pxs=672,144,672,352
+
+[Wire]
+Pxs=600,352,672,352
+
+[Wire]
+Pxs=672,144,704,144
+
+[Wire]
+Pxs=600,352,600,448
+
+[Wire]
+Pxs=696,464,728,464
+
+[Comp]
+Name=22nmCMOS_ANDGate
+Px=336,136
+
+[Attr]
+ON=24,10,PART
+V=X13
+Style=8192
+
+[Attr]
+ON=24,38,FILE
+V=22nmCMOS_ANDGate
+
+[Attr]
+ON=0,0,PACKAGE
+V
+
+[Wire]
+Pxs=376,120,376,128
+
+[Wire]
+Pxs=376,184,376,200
+
+[Wire]
+Pxs=336,144,352,144
+
+[Wire]
+Pxs=336,160,352,160
+
+[Wire]
+Pxs=416,152,424,152
+
+[Comp]
+Name=22nmCMOS_XORGate
+Px=512,120
+
+[Attr]
+ON=28,16,PART
+V=X14
+Style=8192
+
+[Attr]
+ON=24,38,FILE
+V=22nmCMOS_XORGate
+
+[Attr]
+ON=0,0,PACKAGE
+V
+
+[Wire]
+Pxs=584,144,672,144
+
+[Comp]
+Name=22nmCMOS_ANDGate
+Px=520,232
+
+[Attr]
+ON=24,13,PART
+V=X15
+Style=8192
+
+[Attr]
+ON=24,38,FILE
+V=22nmCMOS_ANDGate
+
+[Attr]
+ON=0,0,PACKAGE
+V
+
+[Wire]
+Pxs=560,208,560,216
+
+[Wire]
+Pxs=600,248,600,288
+
+[Wire]
+Pxs=600,288,608,288
+
+[Comp]
+Name=22nmCMOS_3ORGate
+Px=600,272
+
+[Attr]
+ON=24,24,PART
+V=X16
+Style=8192
+
+[Attr]
+ON=24,38,FILE
+V=22nmCMOS_3ORGate
+
+[Attr]
+ON=0,0,PACKAGE
+V
+
+[Wire]
+Pxs=584,296,600,296
+
+[Wire]
+Pxs=640,328,640,344
+
+[Wire]
+Pxs=600,304,608,304
+
+[Wire]
+Pxs=680,296,728,296
+
+[Wire]
+Pxs=640,248,640,264
+
+[Comp]
+Name=22nmCMOS_4x1Mux
+Px=248,424
+
+[Attr]
+ON=24,24,PART
+V=X17
+Style=8192
+
+[Attr]
+ON=24,38,FILE
+V=22nmCMOS_4x1Mux
+
+[Attr]
+ON=0,0,PACKAGE
+V
+
+[Wire]
+Pxs=304,504,304,520
+
+[Wire]
+Pxs=304,520,320,520
+
+[Comp]
+Name=22nmCMOS_2x1Mux
+Px=440,440
+
+[Attr]
+ON=24,24,PART
+V=X18
+Style=8192
+
+[Attr]
+ON=24,38,FILE
+V=22nmCMOS_2x1Mux
+
+[Attr]
+ON=0,0,PACKAGE
+V
+
+[Wire]
+Pxs=472,528,472,552
+
+[Wire]
+Pxs=488,512,488,528
+
+[Wire]
+Pxs=488,528,512,528
+
+[Wire]
+Pxs=480,408,480,432
+
+[Wire]
+Pxs=480,408,496,408
+
+[Wire]
+Pxs=424,496,440,496
+
+[Comp]
+Name=22nmCMOS_2x1Mux
+Px=616,424
+
+[Attr]
+ON=24,24,PART
+V=X19
+Style=8192
+
+[Attr]
+ON=24,38,FILE
+V=22nmCMOS_2x1Mux
+
+[Attr]
+ON=0,0,PACKAGE
+V
+
+[Wire]
+Pxs=648,512,648,536
+
+[Wire]
+Pxs=664,496,664,512
+
+[Wire]
+Pxs=664,512,688,512
+
+[Wire]
+Pxs=656,392,656,416
+
+[Wire]
+Pxs=656,392,672,392
+
+[Wire]
+Pxs=600,448,616,448
+
+[Wire]
+Pxs=520,480,616,480
+
+[Grid Text]
+Text="NANDin"
+Px=256,200
+GridSnap=True
+JustifyH=Left
+JustifyV=Bottom
+CBorder=None
+
+[Grid Text]
+Text="ORin"
+Px=256,112
+GridSnap=True
+JustifyH=Left
+JustifyV=Bottom
+CBorder=None
+
+[Grid Text]
+Text="Ci"
+Px=472,64
+GridSnap=True
+JustifyH=Left
+JustifyV=Bottom
+CBorder=None
+
+[Grid Text]
+Text="VSS"
+Px=552,184
+GridSnap=True
+JustifyH=Left
+JustifyV=Bottom
+CBorder=None
+
+[Grid Text]
+Text="VSS"
+Px=536,280
+GridSnap=True
+JustifyH=Left
+JustifyV=Bottom
+CBorder=None
+
+[Grid Text]
+Text="VDD"
+Px=544,88
+GridSnap=True
+JustifyH=Left
+JustifyV=Bottom
+CBorder=None
+
+[Grid Text]
+Text="VDD"
+Px=560,208
+GridSnap=True
+JustifyH=Left
+JustifyV=Bottom
+CBorder=None
+
+[Grid Text]
+Text="VSS"
+Px=584,344
+GridSnap=True
+JustifyH=Left
+JustifyV=Bottom
+CBorder=None
+
+[Grid Text]
+Text="R"
+Px=704,144
+GridSnap=True
+JustifyH=Left
+JustifyV=Bottom
+CBorder=None
+
+[Grid Text]
+Text="ANDin"
+Px=496,304
+GridSnap=True
+JustifyH=Left
+JustifyV=Bottom
+CBorder=None
+
+[Grid Text]
+Text="VSS"
+Px=376,200
+GridSnap=True
+JustifyH=Left
+JustifyV=Bottom
+CBorder=None
+
+[Grid Text]
+Text="VDD"
+Px=376,96
+GridSnap=True
+JustifyH=Left
+JustifyV=Bottom
+CBorder=None
+
+[Grid Text]
+Text="MuxSel1"
+Px=304,384
+GridSnap=True
+JustifyH=Left
+JustifyV=Bottom
+CBorder=None
+
+[Grid Text]
+Text="MuxSel2"
+Px=328,408
+GridSnap=True
+JustifyH=Left
+JustifyV=Bottom
+CBorder=None
+
+[Grid Text]
+Text="NANDin"
+Px=200,440
+GridSnap=True
+JustifyH=Left
+JustifyV=Bottom
+CBorder=None
+
+[Grid Text]
+Text="ANDin"
+Px=200,456
+GridSnap=True
+JustifyH=Left
+JustifyV=Bottom
+CBorder=None
+
+[Grid Text]
+Text="ORin"
+Px=200,472
+GridSnap=True
+JustifyH=Left
+JustifyV=Bottom
+CBorder=None
+
+[Grid Text]
+Text="NORin"
+Px=200,488
+GridSnap=True
+JustifyH=Left
+JustifyV=Bottom
+CBorder=None
+
+[Grid Text]
+Text="VSS"
+Px=288,544
+GridSnap=True
+JustifyH=Left
+JustifyV=Bottom
+CBorder=None
+
+[Grid Text]
+Text="BitOut"
+Px=728,464
+GridSnap=True
+JustifyH=Left
+JustifyV=Bottom
+CBorder=None
+
+[Grid Text]
+Text="Co"
+Px=728,296
+GridSnap=True
+JustifyH=Left
+JustifyV=Bottom
+CBorder=None
+
+[Grid Text]
+Text="VDD"
+Px=640,248
+GridSnap=True
+JustifyH=Left
+JustifyV=Bottom
+CBorder=None
+
+[Grid Text]
+Text="VDD"
+Px=320,520
+GridSnap=True
+JustifyH=Left
+JustifyV=Bottom
+CBorder=None
+
+[Grid Text]
+Text="VSS"
+Px=472,552
+GridSnap=True
+JustifyH=Left
+JustifyV=Bottom
+CBorder=None
+
+[Grid Text]
+Text="VDD"
+Px=512,528
+GridSnap=True
+JustifyH=Left
+JustifyV=Bottom
+CBorder=None
+
+[Grid Text]
+Text="MuxSelXOR"
+Px=496,408
+GridSnap=True
+JustifyH=Left
+JustifyV=Bottom
+CBorder=None
+
+[Grid Text]
+Text="VSS"
+Px=648,536
+GridSnap=True
+JustifyH=Left
+JustifyV=Bottom
+CBorder=None
+
+[Grid Text]
+Text="VDD"
+Px=688,512
+GridSnap=True
+JustifyH=Left
+JustifyV=Bottom
+CBorder=None
+
+[Grid Text]
+Text="MuxSelR"
+Px=672,392
+GridSnap=True
+JustifyH=Left
+JustifyV=Bottom
+CBorder=None
+
+[Grid Text]
+Text="22nmCMOS_FullAdderForGates Macro"
+Px=8,30
+GridSnap=False
+JustifyH=Left
+JustifyV=Bottom
+CBorder=None
+
+[Schematic]
+CurrentSection 0=0
+CurrentSection 1=0
+CurrentSection 2=0
+CurrentSection 3=0
+Splitter.xs=0
+Splitter.ys=0
+TextQuad=4099
+Scale=1.3333333333333333
+GridUser=10
+ShapeGroups="Main","Euro","Polarity","Main1","Main11","Electrolytic","GroundArrow","DeMorgan"
+CalcRMS=False
+CalcAVG=False
+CalcPeak=False
+CalcVoltage=True
+DisplayMeasure=Last
+ShareScales=True
+
+[Tools]
+Pos=Top
+FILESAVEASOLD=No
+BOM=No
+FILEPCB=No
+PROBE=Yes
+SELECT=Yes
+PAN=Yes
+COMP=Yes
+TEXT=Yes
+WIRE=Yes
+WIRED=Yes
+BUS=Yes
+GRAPHIC=Yes
+FLOWCHART=Yes
+LINE=No
+ELLIPSE=No
+RECT=No
+DIAM=No
+ARC=No
+PIE=No
+TRIANGLE=No
+STAR=No
+LEFTBRK=No
+RIGHTBRK=No
+BOTHBRK=No
+META=No
+PARALLELOGRAM=No
+FC_PROCESS=No
+FC_ALT_PROCESS=No
+FC_DECISION=No
+FC_DATA=No
+FC_PREDEFPROCESS=No
+FC_INTERNALSTORAGE=No
+FC_DOCUMENT=No
+FC_MULTIDOCUMENT=No
+FC_TERMINATOR=No
+FC_PREPARATION=No
+FC_MANUALINPUT=No
+FC_MANUALOPERATION=No
+FC_CONNECTOR=No
+FC_OFFPAGECONNECTOR=No
+FC_PUNCHCARD=No
+FC_PUNCHEDTAPE=No
+FC_SUMMING_JUNCTION=No
+FC_OR=No
+FC_COLLATE=No
+FC_SORT=No
+FC_EXTRACT=No
+FC_MERGE=No
+FC_STORED_DATA=No
+FC_DELAY=No
+FC_SAS=No
+FC_MAGNETIC_DISK=No
+FC_DAS=No
+FC_DISPLAY=No
+SPREAD_SHEET=Yes
+POLYCLOS=No
+POLYOPEN=No
+FLAG=Yes
+INFO=Yes
+HELP=Yes
+HELP_SPICE=No
+LINK=Yes
+CHECK=Yes
+REGION_ENABLE=Yes
+TITLE_BLOCK=Yes
+DIGTRC=No
+DIGTRC2=No
+BUILD_COMMAND=Yes
+DIGALL=No
+GRIDTEXT=Yes
+COMPTEXT=Yes
+NODE=Yes
+MEASURED=Yes
+NODEV=Yes
+CURRENT=Yes
+POWER=Yes
+CONDITIN=Yes
+PIN=Yes
+CONNWARN=Yes
+CROSS=No
+GRID=Yes
+BORDER=Yes
+BORDERONE=Yes
+TITLE=Yes
+RUBBER=Yes
+PROPERTY=Yes
+STEP=Yes
+MIRROR=Yes
+ROTATE=Yes
+FLIPY=Yes
+FLIPX=Yes
+CIR_MAKEMACRO=No
+CLEARCUTWIRE=No
+CLIPBOARDCIRPAGE2BMM=No
+FINDCOMP=Yes
+FIND=Yes
+REPEAT=No
+REPLACE=No
+MODEL=Yes
+CIR2CKT=No
+ATTDISP=No
+ENABLE=Yes
+DISABLE=Yes
+ENABLE_WITH=Yes
+TOFRONT=Yes
+TOBACK=Yes
+SELNEXT=No
+PAGEADD=No
+PAGEADDTEXT=No
+ADDSECTION=No
+PAGEDEL=No
+ZOOMIN=Yes
+ZOOMOUT=Yes
+AUTOSCALECIR=Yes
+GOTOFLAG=No
+UPLEVEL=Yes
+COLOR=Yes
+FONT=Yes
+STYLE=Yes
+DM_LAST=No
+DM_RMS=No
+DM_AVG=No
+DM_PEAK=No
+GRID_NONE=No
+GRID_NORMAL=No
+GRID_BOLD_5=No
+GRID_BOLD_6=No
+GRID_BOLD_USER=No
+GRAPH_PAPER=No
+SPLITCIRTEXTH=No
+SPLITCIRTEXTV=No
+SPACE_SPLITTERS_EVENLY=No
+NORMALCIR=No
+RENAMEDEFINE=No
+RENAMECMP=No
+ATTALIGN=No
+RESETNODEPOS=No
+FIT2STANDARD=No
+NODESNAP=No
+MOVETEXT=No
+TEXTINC=No
+TOGGLETEXT=No
+TOGGLEMODE=No
+TOLERANCE=No
+ALIGNAB=No
+ALIGNLEFT=No
+ALIGNCENTER=No
+ALIGNRIGHT=No
+ALIGNTOP=No
+ALIGNMIDDLES=No
+ALIGNBOTTOM=No
+
+[Section]
+Index=0
+Name="22nmCMOS_FullAdderForGates"
+Type=Main
+Enable=True
+CurrentPage 0=0
+CurrentPage 1=0
+CurrentPage 2=0
+CurrentPage 3=0
+TabSize 0=425
+TabSize 1=425
+TabSize 2=425
+TabSize 3=425
+
+[Page]
+Index=0
+Section=0
+Print=True
+Enable=True
+Name=Main
+PrinterScale=1
+Scale 0=1
+Scale 1=1
+Scale 2=1
+Scale 3=1.3333333333333333
+Px=732,322
+WinBackGround Color=#FFFFFF
+Select Color=#FF0000
+Anchor Color=#000000
+Select Box Color=#000080
+Grid Text Color=Height=-12,FStyle=0,Color=#0000FF,Name=Verdana
+Grid Text RTF=False
+Grid Text Angle=0
+Grid Text GridSnap=True
+Grid Text PinIt=False
+Grid Text JustifyH=Left
+Grid Text JustifyV=Bottom
+Grid GradientColor2=None
+Grid OutlineThickness=1
+Grid OutlineColor=None
+Component Color=#0000FF
+Attribute Text=Height=-12,FStyle=0,Color=#008000,Name=Verdana
+Wire Color=#008000
+Bus Color=#008000
+Pin Connection=Height=-10,FStyle=0,Color=#FF0000,Name=Arial
+Pin Marker Color=#008000
+Node Number=Height=-11,FStyle=0,Color=#FF00FF,Name=Arial
+Node Voltage Color=Height=-11,FStyle=0,Color=#000000,Name=Arial
+Dynamic AC Voltage Color=#E4E4E4
+Text Banner Text=Height=-15,FStyle=0,Color=#800000,Name=Arial
+Title Block Background=#C0C0C0
+Current=Height=-11,FStyle=0,Color=#0000FF,Name=Arial
+Power/Condition=Height=-11,FStyle=0,Color=#FF0000,Name=Arial
+Digital Path Color=#FF0000
+Title Block Border=#000000
+Disabled	Color=#C0C0C0
+Search Color=#FFFF00
+Grid Color=#000000
+Graph Paper=#E4E4E4
+Digital 0 Color=#000000
+Digital R Color=#FFFF00
+Digital F Color=#FFFF00
+Digital 1 Color=#FF0000
+Digital X Color=#C0C0C0
+Digital Z Color=#808080
+Block Select Color=#51F998
+
+[Page]
+Index=1
+Section=0
+Type=Text
+Print=False
+Enable=True
+Name=Text
+Font=Height=-15,FStyle=0,Color=#000000,Name=Courier New
+Comment Color=#008000
+WinBackGround Color=#FFFFFF
+Disabled	Color=#C0C0C0
+KeyWord Color=#0000FF
+Error	Color=#FF0000
+Search Color=#FFFF00
+
+[Page]
+Index=2
+Section=0
+Type=Text
+Print=False
+Enable=True
+Name=Models
+Font=Height=-15,FStyle=0,Color=#000000,Name=Courier New
+Comment Color=#008000
+WinBackGround Color=#FFFFFF
+Disabled	Color=#C0C0C0
+KeyWord Color=#0000FF
+Error	Color=#FF0000
+Search Color=#FFFF00
+
+[Page]
+Index=3
+Section=0
+Type=Info
+Print=False
+Enable=True
+Name=Info
+Font=Height=-15,FStyle=0,Color=#000000,Name=Courier New
+Comment Color=#008000
+WinBackGround Color=#FFFFFF
+Disabled	Color=#C0C0C0
+KeyWord Color=#0000FF
+Error	Color=#FF0000
+Search Color=#FFFF00
+
+[Text Area]
+Section=0
+Page=1
+Text=
+
+[Text Area]
+Section=0
+Page=2
+Text=* Schematic File
+Text=*
+Text=* Syntax:
+Text=* .MODEL <model name> [AKO:<reference model name>] <ModelType>
+Text=* +([<parameter name>=<value>][LOT[/#][/GAUSS|/UNIFORM|/WCASE]=[<tol>[%]] |[-<low>%,<high>%]][DEV[/#][/GAUSS|/UNIFORM|/WCASE]=[<tol>[%]]...)
+Text=* ModelType must be one of OPA,D,NPN,NMOS,NJF,PUL,SIN,TRN,CORE,GASFET,VSWITCH,ISWITCH,CAP,IND,RES,PNP,PMOS,PJF,DOUTPUT,DINPUT,UADC,UDAC,UGATE,UTGATE,UEFF,UGFF,UDLY,UPLD,UROM,URAM,UBGT,UIO,LPNP,NIGBT,I,V
+Text=*
+Text=*Examples:
+Text=* .MODEL 2N2222A NPN(BF=150 IS=1E-14)
+Text=* .model M1 NMOS(KP=2.5E-5 VTO=1.345 CGDO=14.67p CGBO=4.566p)
+Text=* .MODEL DK D(IS=1E-18)
+Text=* .model 2N2222A AKO:2N2222 NPN (BF=55 ISE=10F)
+Text=* .Model BJT1 NPN (RE=12 LOT/1/GAUSS=30% DEV/2/UNIFORM=2%)
+Text=*
+Text=* A .cir file is typically found in the data directory
+Text=*
+
+[InfoPage]
+InfoPage=True
+Warnings=True
+System=True
+Defines=True
+Array=True
+Model=True
+Measure=True
+MacroSubckt=True
+NotUsed=True
+ComponentCounts=True
+VariablizePaths=False
+DontShowPaths=False
+SimulationLog=True
+
+[Limits]
+Analysis=DynamicAC
+FirstValueDisplay=Mag
+SecondValueDisplay=PhaseDeg
+PlaceText=True
+
+[Limits]
+Analysis=DynamicDC
+PlaceText=True
+
+[Pane]
+Analysis=Transient
+
+[Pane]
+Analysis=AC
+
+[Pane]
+Analysis=DC
+
+[Pane]
+Analysis=HmDistortion
+
+[Pane]
+Analysis=ImDistortion
+
+[Pane]
+Analysis=Stability
+
+[WCTolerance]
+Var Width=100
+Nominal Width=72
+Tol Width=152
+Tol Name=Drift
+Col Width Neq=50
+Col Width Pos=50
+Col Width Rnd=50
+
+[WCFiles]
+UseFile=<Library>Standard.tlib
+AVAILABLE_FILE=<Library>Standard.tlib
+
+[OPMethods]
+Analysis=Transient
+Standard Newton-Raphson=0,0
+Source Stepping=0,0
+Diagonal Gmin Stepping=0,0
+Junction Gmin Stepping=0,0
+Pseudo Transient=0,0
+
+[OPMethods]
+Analysis=AC
+Standard Newton-Raphson=0,0
+Source Stepping=0,0
+Diagonal Gmin Stepping=0,0
+Junction Gmin Stepping=0,0
+Pseudo Transient=0,0
+
+[OPMethods]
+Analysis=DC
+Standard Newton-Raphson=0,0
+Source Stepping=0,0
+Diagonal Gmin Stepping=0,0
+Junction Gmin Stepping=0,0
+Pseudo Transient=0,0
+
+[OPMethods]
+Analysis=HmDistortion
+Standard Newton-Raphson=0,0
+Source Stepping=0,0
+Diagonal Gmin Stepping=0,0
+Junction Gmin Stepping=0,0
+Pseudo Transient=0,0
+
+[OPMethods]
+Analysis=ImDistortion
+Standard Newton-Raphson=0,0
+Source Stepping=0,0
+Diagonal Gmin Stepping=0,0
+Junction Gmin Stepping=0,0
+Pseudo Transient=0,0
+
+[OPMethods]
+Analysis=Stability
+Standard Newton-Raphson=0,0
+Source Stepping=0,0
+Diagonal Gmin Stepping=0,0
+Junction Gmin Stepping=0,0
+Pseudo Transient=0,0
+
+[OPMethods]
+Analysis=DynamicAC
+Standard Newton-Raphson=0,0
+Source Stepping=0,0
+Diagonal Gmin Stepping=0,0
+Junction Gmin Stepping=0,0
+Pseudo Transient=0,0
+
+[OPMethods]
+Analysis=DynamicDC
+Standard Newton-Raphson=0,0
+Source Stepping=0,0
+Diagonal Gmin Stepping=0,0
+Junction Gmin Stepping=0,0
+Pseudo Transient=0,0
